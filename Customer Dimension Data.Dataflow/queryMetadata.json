@@ -1,0 +1,34 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Customer Dimension Data",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "0b440812-85c2-4a5f-b05d-45bb155b3ca1",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dimension_customer": {
+      "queryId": "45b7f2c4-6302-432f-ad3e-8ae8113391db",
+      "queryName": "dimension_customer",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"7a1dbc29-b5ce-498a-991c-8271d6f5db45\",\"DatasourceId\":\"360cf58f-ba51-40ba-be26-e01b8b80fe1f\"}"
+    },
+    {
+      "path": "https://thebakingroomnet-my.sharepoint.com/personal/eric_thebakingroom_net/",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"7a1dbc29-b5ce-498a-991c-8271d6f5db45\",\"DatasourceId\":\"e24e7798-4bf9-40b5-aa83-d2516059a483\"}"
+    }
+  ]
+}
