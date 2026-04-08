@@ -5,6 +5,7 @@ shared DefaultDestination = Lakehouse.Contents([EnableFolding = false]){[workspa
 shared dimension_customer = let
   Source = Csv.Document(Web.Contents("https://thebakingroomnet-my.sharepoint.com/personal/eric_thebakingroom_net/Documents/Fabric%20Tutorial/dimension_customer.csv"), [Delimiter = ",", Columns = 11, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
   #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
-  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"CustomerKey", Int64.Type}, {"WWICustomerID", Int64.Type}, {"Customer", type text}, {"BillToCustomer", type text}, {"Category", type text}, {"BuyingGroup", type text}, {"PrimaryContact", type text}, {"PostalCode", type text}, {"ValidFrom", type datetime}, {"ValidTo", type datetime}, {"LineageKey", Int64.Type}})
+  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"CustomerKey", Int64.Type}, {"WWICustomerID", Int64.Type}, {"Customer", type text}, {"BillToCustomer", type text}, {"Category", type text}, {"BuyingGroup", type text}, {"PrimaryContact", type text}, {"PostalCode", type text}, {"ValidFrom", type datetime}, {"ValidTo", type datetime}, {"LineageKey", Int64.Type}}),
+  #"Changed column type 1" = Table.TransformColumnTypes(#"Changed column type", {{"ValidTo", type date}})
 in
-  #"Changed column type";
+  #"Changed column type 1";
